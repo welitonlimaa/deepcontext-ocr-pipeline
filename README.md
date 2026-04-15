@@ -7,7 +7,7 @@ em contexto otimizado para LLMs, usando **markitdown**, **pdfplumber**, **Redis*
 
 ## Arquitetura
 
-![flow](/image/flow.svg)
+![flow](/image/mxGraphModel.jpg)
 
 ---
 

@@ -51,6 +51,8 @@ def create_zip_from_keys(job_id: str, storage, keys: list[str]):
                     continue
 
         zip_key = f"jobs/{job_id}/output.zip"
-        zip_url = storage.upload_file(zip_key, str(zip_path))
+        storage.upload_file(zip_key, str(zip_path))
+
+        zip_url = storage.get_presigned_url(zip_key)
 
     return zip_key, zip_url

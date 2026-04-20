@@ -11,6 +11,11 @@ def get_cors_origins():
 
 @dataclass
 class Settings:
+    # API
+    API_KEY: str = os.getenv("API_KEY", "")
+    RATE_LIMIT_CRITICAL: int = int(os.getenv("RATE_LIMIT_CRITICAL", "2"))
+    RATE_LIMIT_GLOBAL: int = int(os.getenv("RATE_LIMIT_GLOBAL", "50"))
+
     # Redis
     REDIS_URL: str = os.getenv("REDIS_URL", "redis://localhost:6379")
     REDIS_JOB_TTL: int = int(os.getenv("REDIS_JOB_TTL", "86400"))

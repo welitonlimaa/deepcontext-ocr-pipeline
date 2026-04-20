@@ -14,7 +14,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config.settings import settings
 from app.config.logging_config import configure_logging
-from app.api.middleware import log_requests
+from app.api.middleware import (
+    api_key_middleware,
+    global_rate_limit_middleware,
+    log_requests,
+)
 from app.api.routers import health, jobs
 
 configure_logging()
@@ -46,6 +50,8 @@ def _register_middlewares(app: FastAPI) -> None:
     )
 
     app.middleware("http")(log_requests)
+    app.middleware("http")(api_key_middleware)
+    app.middleware("http")(global_rate_limit_middleware)
 
 
 def _register_routers(app: FastAPI) -> None:

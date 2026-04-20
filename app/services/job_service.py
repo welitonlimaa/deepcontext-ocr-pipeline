@@ -184,9 +184,7 @@ def create_and_submit_job(
 
 
 def create_and_submit_job_from_key(
-    pdf_key: str,
-    filename: str,
-    tags: Optional[str],
+    pdf_key: str, filename: str, tags: Optional[str], client_ip: str
 ) -> str:
     """
     Cria um job a partir de um PDF já existente no S3 e despacha o pipeline.
@@ -195,7 +193,11 @@ def create_and_submit_job_from_key(
     if not storage.object_exists(pdf_key):
         logger.warning(
             "Submit por chave S3: objeto não encontrado",
-            extra={"action": "s3_key_not_found", "pdf_key": pdf_key},
+            extra={
+                "action": "s3_key_not_found",
+                "pdf_key": pdf_key,
+                "client_ip": client_ip,
+            },
         )
         raise HTTPException(404, f"Objeto não encontrado no S3: {pdf_key}")
 
@@ -210,7 +212,12 @@ def create_and_submit_job_from_key(
 
     logger.info(
         "Job enfileirado via chave S3",
-        extra={"action": "job_queued_by_key", "job_id": job_id, "pdf_key": pdf_key},
+        extra={
+            "action": "job_queued_by_key",
+            "job_id": job_id,
+            "pdf_key": pdf_key,
+            "client_ip": client_ip,
+        },
     )
 
     return job_id

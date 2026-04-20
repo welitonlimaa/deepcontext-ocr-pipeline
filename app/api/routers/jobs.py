@@ -64,6 +64,7 @@ async def submit_by_s3_key(
     pdf_key: str,
     filename: str = "document.pdf",
     tags: Optional[str] = None,
+    client_ip: str = Depends(require_rate_limit),
 ) -> JobKeySubmitResponse:
     """
     Submete um PDF já existente no S3 para processamento.
@@ -73,6 +74,7 @@ async def submit_by_s3_key(
         pdf_key=pdf_key,
         filename=filename,
         tags=tags,
+        client_ip=client_ip,
     )
 
     return JobKeySubmitResponse(

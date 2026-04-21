@@ -237,11 +237,11 @@ Você está recebendo um:
 
 Que permite:
 
-✅ uso offline
-✅ integração com qualquer stack
-✅ zero dependência de API
-✅ base pronta para IA
-✅ reutilização em múltiplos contextos
+- ✅ uso offline
+- ✅ integração com qualquer stack
+- ✅ zero dependência de API
+- ✅ base pronta para IA
+- ✅ reutilização em múltiplos contextos
 
 ---
 

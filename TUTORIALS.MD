@@ -1,4 +1,4 @@
-# 📦 DeepContext Output — Guia Prático para Devs
+# 📦 DeepContext Output — Guia Prático
 
 Este projeto gera um pacote (`output.zip`) contendo todo o conteúdo processado de um PDF já estruturado para uso em aplicações modernas, como:
 

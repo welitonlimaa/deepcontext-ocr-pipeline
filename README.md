@@ -4,6 +4,9 @@ Pipeline desacoplado para extração e transformação de PDFs grandes
 em contexto otimizado para LLMs, usando **markitdown**, **pdfplumber**, **Redis**, **MinIO** e **Celery**.
 
 ---
+* Frontend: [https://github.com/welitonlimaa/deepcontext](https://github.com/welitonlimaa/deepcontext)
+* Backend: [https://github.com/welitonlimaa/deepcontext-ocr-pipeline](https://github.com/welitonlimaa/deepcontext-ocr-pipeline)
+---
 
 ## Arquitetura
 
